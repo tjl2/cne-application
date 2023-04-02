@@ -46,7 +46,7 @@ function Me() {
         along with lots of experience in the DevOps space. I've been involved in cloud technologies
         for the last 10 years, using both AWS and Azure in my career. Additionally, I spent a few
         years spearheading GitHub's Enterprise Quality Engineering team, where I was responsible
-        for building end-to-end testing frmaeworks and automating the deployment and provisioning
+        for building end-to-end testing frameworks and automating the deployment and provisioning
         of our on-premise GitHub Enterprise instances on AWS and Azure.<br />
         I feel like these experiences have given me a great breadth of knowledge and experience
         that I think is a great fit for the role.
@@ -59,7 +59,8 @@ function Me() {
         of the technologies listed in the job description. The site is written in React,
         utilising the AWS CDK to deploy it to S3 and CloudFront. Wanting to make this a truly
         cloud-native app, I also utilised a serverless function that makes requests to the
-        OpenAI API to <a href="#synopsis-generator">generate a synopsis for a Warhammer 40,000 Black Library novel!</a>
+        OpenAI API to <a href="#synopsis-generator">generate a synopsis for a Warhammer
+        40,000 Black Library novel!</a>
       </p>
       <p>
         Having not used React, built a Lambda function or deployed with CDK before, this was
