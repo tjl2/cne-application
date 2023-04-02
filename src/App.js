@@ -105,7 +105,7 @@ function SynopsisGenerator() {
       </form>
       {response && (
         <div>
-          <h2>Response:</h2>
+          <h2>Your synopsis:</h2>
           <p>{response.choices[0].text}</p>
         </div>
       )}

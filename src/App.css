@@ -26,7 +26,7 @@
   font-family: 'Bitter', serif;
 }
 
-.Me h1 {
+.Me h1, h2 {
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
 }
