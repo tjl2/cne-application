@@ -34,16 +34,45 @@ function Me() {
   return (
     <div className="Me">
       <h1>Tim Littlemore</h1>
-      <h2>Senior Software Engineer | Infrastructure Engineer</h2>
-      <p>All the details about how much I love 40K and how I'd love to work for Games Workshop.</p>
+      <h2 className="centred">Senior Software Engineer | Infrastructure Engineer</h2>
+      <p>
+        I was excited to see the role of Cloud Native Engineer open up recently.
+        As a massive fan of Warhammer 40,000, I'd love to work for Games Workshop!
+      </p>
+      <p>
+        As you will see from my CV, I've got over 20 years of experience in software development
+        and infrastructure engineering. I've worked in the web development and deployment space
+        for my whole career, so have a great depth of experience in most areas of the stack,
+        along with lots of experience in the DevOps space. I've been involved in cloud technologies
+        for the last 10 years, using both AWS and Azure in my career. Additionally, I spent a few
+        years spearheading GitHub's Enterprise Quality Engineering team, where I was responsible
+        for building end-to-end testing frmaeworks and automating the deployment and provisioning
+        of our on-premise GitHub Enterprise instances on AWS and Azure.<br />
+        I feel like these experiences have given me a great breadth of knowledge and experience
+        that I think is a great fit for the role.
+      </p>
       <h2>About the site</h2>
-      <ul>
-        <li>React</li>
-        <li>Deployed via AWS CDK</li>
-        <li>Hosted on S3</li>
-        <li>CloudFront CDN</li>
-        <li>Link to repo</li>
-      </ul>
+      <p>
+        Having most of my web development experience in backend, server-side technologies
+        (Ruby on Rails & Elixir Phoenix applications deployed as containers is my usual stack),
+        I wanted to give myself a weekend hack challenge to build a single page app using some 
+        of the technologies listed in the job description. The site is written in React,
+        utilising the AWS CDK to deploy it to S3 and CloudFront. Wanting to make this a truly
+        cloud-native app, I also utilised a serverless function that makes requests to the
+        OpenAI API to <a href="#synopsis-generator">generate a synopsis for a Warhammer 40,000 Black Library novel!</a>
+      </p>
+      <p>
+        Having not used React, built a Lambda function or deployed with CDK before, this was
+        a great learning experience for me – I'm really pleased to have deployed something in
+        this short timeframe. My previous development and infrastructure experiences definitely
+        helped me to get up to speed quickly.
+      </p>
+      <p>
+        You can see the GitHub repository for the React site at &nbsp;
+        <a href="https://github.com/tjl2/cne-application">github.com/tjl2/cne-application</a>
+        &nbsp;and the CDK code at&nbsp;
+        <a href="https://github.com/tjl2/cne-application-cdk">github.com/tjl2/cne-application-cdk</a>.
+      </p>
       <div className="Cv">
         {/* Download button for csvPdf */}
         <a href={cvPDF} download="Tim-Littlemore-CV-March2023.pdf">Download my CV</a>
@@ -99,12 +128,11 @@ function SynopsisGenerator() {
 
   return (
     <div className="Me">
-      <h2>Plan the next Black Library best seller…</h2>
-      <p>Get OpenAI to create a synopsis for you:</p>
+      <h2 id="synopsis-generator">Plan the next Black Library best seller…</h2>
       <form onSubmit={handleSubmit}>
         <label>
-        Write a synopsis for a Black Library novel about:
-          <input type="text" name="prompt" onChange={handleChange} />
+          Write a synopsis for a Warhammer 40,000 Black Library novel about:<br />
+          <input type="text" name="prompt" onChange={handleChange} placeholder="Henry Cavill leading the Adeptus Custodes" />
         </label>
         <br />
         <button type="submit" disabled={isLoading}>
