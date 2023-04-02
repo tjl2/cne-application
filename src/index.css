@@ -32,8 +32,13 @@ a {
   font-style: bold;
 }
 
+a:hover {
+  color: #147d9b;
+}
+
 p {
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
+  font-size: 1.2em;
 }
