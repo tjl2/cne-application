@@ -67,6 +67,7 @@ function FactionBtn({faction, onClick }) {
 function SynopsisGenerator() {
   const [response, setResponse] = useState(null);
   const [formData, setFormData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -77,9 +78,11 @@ function SynopsisGenerator() {
       body: JSON.stringify(formData),
     };
     try {
+      setIsLoading(true);
       const response = await fetch(url, options);
       const json = await response.json();
       setResponse(json);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -104,12 +107,14 @@ function SynopsisGenerator() {
           <input type="text" name="prompt" onChange={handleChange} />
         </label>
         <br />
-        <button type="submit">Query the machine spirits</button>
+        <button type="submit" disabled={isLoading}>
+        {isLoading ? 'Machine spirits working…' : 'Query the heretical AI'}
+        </button>
       </form>
       {response && (
         <div>
           <h2>Your synopsis:</h2>
-          <p>{response.choices[0].text}</p>
+          <p className="synopsis">{response.choices[0].text}</p>
         </div>
       )}
     </div>
