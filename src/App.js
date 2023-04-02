@@ -44,6 +44,9 @@ function Me() {
         <li>CloudFront CDN</li>
         <li>Link to repo</li>
       </ul>
+      <h2>Plan the next Black Library best seller…</h2>
+      <p>Get OpenAI to create a synopsis for you:</p>
+      <SynopsisGenerator />
     </div>
   )
 }
@@ -58,6 +61,56 @@ function FactionBtn({faction, onClick }) {
     </button>
     </>
   )
+}
+
+function SynopsisGenerator() {
+  const [response, setResponse] = useState(null);
+  const [formData, setFormData] = useState({});
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const url = 'https://4zoml2ffdp26pyx35ruk7krt3u0duvmk.lambda-url.eu-west-2.on.aws/';
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    };
+    try {
+      const response = await fetch(url, options);
+      const json = await response.json();
+      setResponse(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Write me a synopsis about…
+          <input type="text" name="prompt" onChange={handleChange} />
+        </label>
+        <br />
+        <button type="submit">Query the machine spirits</button>
+      </form>
+      {response && (
+        <div>
+          <h2>Response:</h2>
+          <p>{response.choices[0].text}</p>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;
