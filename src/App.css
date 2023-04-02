@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: small;
 }
 
 .App-main {
@@ -17,12 +18,17 @@
   color: #61dafb;
 }
 
-/* Add an opaque background to the Me div */
 .Me {
   background-color: rgba(12, 32, 123, 0.6);
   border-radius: 9px;
   padding: 0.5em;
   margin: 0.5em;
+  font-family: 'Bitter', serif;
+}
+
+.Me h1 {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
 }
 
 .faction-buttons {
