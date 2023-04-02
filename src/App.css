@@ -4,7 +4,7 @@
 }
 
 .App-main {
-  background-color: #282c34;
+  border-radius: 9px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 .Me {
-  background-color: rgba(12, 32, 123, 0.6);
+  background-color: rgba(26, 27, 30, 0.9);
   border-radius: 9px;
   padding: 0.5em;
   margin: 0.5em;
@@ -29,6 +29,21 @@
 .Me h1, h2 {
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
+}
+
+.Cv a {
+  background-color: #07262f;
+  color: white;
+  font-size: 1em;
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  border: 2px solid #075165;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.Cv a:hover {
+  background-color: #075165;
 }
 
 .faction-buttons {

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+
 import './App.css';
+import cvPDF from './cv-march2023.pdf';
 
 function App() {
-  const [backgroundImage, setBackgroundImage] = useState("");
+  const [backgroundImage, setBackgroundImage] = useState("url('../40K-Terminators.jpg')");
 
   const handleChangeBackground = (faction) => {
     faction === "astartes" ? 
@@ -22,9 +24,7 @@ function App() {
           <FactionBtn faction="tyranids" onClick={() => handleChangeBackground("tyranids")} />
         </div>
         <Me />
-        <a href="https://timlittlemore.s3-eu-west-1.amazonaws.com/Tim+Littlemore+CV.pdf" target="_blank" rel="noreferrer">
-          <button>Download CV</button>
-        </a>
+        <SynopsisGenerator />
       </main>
     </div>
   );
@@ -44,9 +44,10 @@ function Me() {
         <li>CloudFront CDN</li>
         <li>Link to repo</li>
       </ul>
-      <h2>Plan the next Black Library best seller…</h2>
-      <p>Get OpenAI to create a synopsis for you:</p>
-      <SynopsisGenerator />
+      <div className="Cv">
+        {/* Download button for csvPdf */}
+        <a href={cvPDF} download="Tim-Littlemore-CV-March2023.pdf">Download my CV</a>
+        </div>
     </div>
   )
 }
@@ -94,10 +95,12 @@ function SynopsisGenerator() {
 
 
   return (
-    <div>
+    <div className="Me">
+      <h2>Plan the next Black Library best seller…</h2>
+      <p>Get OpenAI to create a synopsis for you:</p>
       <form onSubmit={handleSubmit}>
         <label>
-          Write me a synopsis about…
+        Write a synopsis for a Black Library novel about:
           <input type="text" name="prompt" onChange={handleChange} />
         </label>
         <br />
@@ -112,5 +115,6 @@ function SynopsisGenerator() {
     </div>
   );
 }
+  
 
 export default App;
