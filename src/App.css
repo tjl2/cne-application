@@ -19,17 +19,40 @@
 }
 
 .Me {
-  max-width: 70vw;
+  width: 70vw;
   background-color: rgba(26, 27, 30, 0.9);
   border-radius: 9px;
   padding: 0.5em;
   margin: 0.5em;
+}
+
+.Me p {
   font-family: 'Bitter', serif;
 }
 
-.Me h1, h2 {
+.Me h1 {
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
+}
+
+.Me h2 {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+.Me label {
+  font-weight: bold;
+}
+
+.Me input {
+  background-color: #07262f;
+  color: white;
+  font-size: 1em;
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  border: 2px solid #075165;
+  border-radius: 6px;
+  width: 40%;
 }
 
 .Cv a {
@@ -56,4 +79,6 @@
 .synopsis p {
   font-family: 'Courier New', Courier, monospace;
   margin: 0.5em;
+  text-align: left;
+  align-self: left;
 }

@@ -25,3 +25,15 @@ button {
 button:hover {
   background-color: #075165;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+  font-style: bold;
+}
+
+p {
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+}
